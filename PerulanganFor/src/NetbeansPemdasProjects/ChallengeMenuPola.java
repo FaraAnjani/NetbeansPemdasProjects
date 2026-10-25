@@ -1,0 +1,71 @@
+package NetbeansPemdasProjects;
+/**
+ * Nama : Fara Anjani
+ * NIM : 09040626118
+ * Modul Challenge Menu Pola
+ */
+import java.util.Scanner;
+public class ChallengeMenuPola {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pilihan;
+        do {
+            System.out.println("\n===== MENU POLA =====");
+            System.out.println("1. Segitiga");
+            System.out.println("2. Segitiga Terbalik");
+            System.out.println("3. Persegi");
+            System.out.println("4. Piramida");
+            System.out.println("5. Diamond");
+            System.out.println("6. Keluar");
+            System.out.print("Pilihan: ");
+            pilihan = input.nextInt();
+            if (pilihan >= 1 && pilihan <= 5) {
+                System.out.print("Masukkan ukuran/tinggi: ");
+                int n = input.nextInt();
+                switch (pilihan) {
+                    case 1:
+                        for (int i = 1; i <= n; i++) {
+                            for (int j = 1; j <= i; j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        break;
+                    case 2:
+                        for (int i = n; i >= 1; i--) {
+                            for (int j = 1; j <= i; j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        break;
+                    case 3:
+                        for (int i = 1; i <= n; i++) {
+                            for (int j = 1; j <= n; j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        break;
+                    case 4:
+                        for (int i = 1; i <= n; i++) {
+                            for (int j = n; j > i; j--) System.out.print(" ");
+                            for (int j = 1; j <= (2 * i - 1); j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        break;
+                    case 5:
+                        for (int i = 1; i <= n; i++) {
+                            for (int j = n; j > i; j--) System.out.print(" ");
+                            for (int j = 1; j <= (2 * i - 1); j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        for (int i = n - 1; i >= 1; i--) {
+                            for (int j = n; j > i; j--) System.out.print(" ");
+                            for (int j = 1; j <= (2 * i - 1); j++) System.out.print("*");
+                            System.out.println();
+                        }
+                        break;
+                }
+            } else if (pilihan == 6) {
+                System.out.println("Keluar dari program.");
+            } else {
+                System.out.println("Pilihan tidak valid!");
+            }
+        } while (pilihan != 6);
+    }
+}
